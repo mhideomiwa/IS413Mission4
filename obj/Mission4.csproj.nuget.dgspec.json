@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\DEV\\BYU\\IS413\\Mission4\\Mission4.csproj": {}
+    "C:\\Users\\kdavi\\Source\\Repos\\mhideomiwa\\IS413Mission4\\Mission4.csproj": {}
   },
   "projects": {
-    "C:\\DEV\\BYU\\IS413\\Mission4\\Mission4.csproj": {
+    "C:\\Users\\kdavi\\Source\\Repos\\mhideomiwa\\IS413Mission4\\Mission4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DEV\\BYU\\IS413\\Mission4\\Mission4.csproj",
+        "projectUniqueName": "C:\\Users\\kdavi\\Source\\Repos\\mhideomiwa\\IS413Mission4\\Mission4.csproj",
         "projectName": "Mission4",
-        "projectPath": "C:\\DEV\\BYU\\IS413\\Mission4\\Mission4.csproj",
-        "packagesPath": "C:\\Users\\mhmiw\\.nuget\\packages\\",
-        "outputPath": "C:\\DEV\\BYU\\IS413\\Mission4\\obj\\",
+        "projectPath": "C:\\Users\\kdavi\\Source\\Repos\\mhideomiwa\\IS413Mission4\\Mission4.csproj",
+        "packagesPath": "C:\\Users\\kdavi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kdavi\\Source\\Repos\\mhideomiwa\\IS413Mission4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mhmiw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kdavi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
