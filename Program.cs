@@ -21,6 +21,65 @@ internal class Program
             }
         }
 
+        int PlayerTurn(char[,] board, int player)
+        {
+            while (true)
+            {
+                // Ask the player to make a move
+                Console.WriteLine("Player " + player + ", enter the row (0, 1, or 2) and column (0, 1, or 2) of your move: ");
+                // Read the player's move
+                int row = int.Parse(Console.ReadLine());
+                int column = int.Parse(Console.ReadLine());
+        
+                // Check for invalid entries
+                if (row < 0 || row > 2 || column < 0 || column > 2)
+                {
+                    Console.WriteLine("Invalid move. Please try again.");
+                    continue; // Restart the loop to prompt the player again
+                }
+
+                // Check if the move is valid
+                if (board[row, column] == ' ')
+                {
+                    // If the move is valid, fill the intersection with the player's symbol
+                    if (player == 1)
+                    {
+                        board[row, column] = 'X';
+                        // Check if the player has won
+                        if (wn.CheckForWinner(board, 'X'))
+                        {
+                            Console.WriteLine("Player 1 wins!");
+                            return 0;
+                        }
+                        else
+                        {
+                            return 2;
+                        }
+                    }
+                    else
+                    {
+                        board[row, column] = 'O';
+                        // Check if the player has won
+                        if (wn.CheckForWinner(board, 'O'))
+                        {
+                            Console.WriteLine("Player 2 wins!");
+                            return 0;
+                        }
+                        else
+                        {
+                            return 1;
+                        }
+                    }
+                }
+                else
+                {
+                    // If the move is invalid, inform the player and continue the loop
+                    Console.WriteLine("Invalid move. Please try again.");
+                }
+            }
+        }
+
+
 
         Console.WriteLine("Welcome to Tic-Tac-Toe!\n");
 
@@ -31,53 +90,12 @@ internal class Program
         InitializeBoard(board);
         
         // Ask each player in turn to make a move
-        bool winner = false;
         int player = 1;
         
-        
-        while (!winner)
+        while (player != 0)
         {
-            int row = 0;
-            int column = 0;
-            
             wn.PrintBoard(board);
-            
-            if (player == 1)
-            {
-                Console.WriteLine("Player 1, please enter the row and column where you want to place your X.");
-                Console.WriteLine("Row: ");
-                row = int.Parse(Console.ReadLine());
-                Console.WriteLine("Column: ");
-                column = int.Parse(Console.ReadLine());
-                
-                board[row, column] = 'X';
-                
-                if (wn.CheckForWinner(board, 'X'))
-                {
-                    Console.WriteLine("Player 1 wins!");
-                    winner = true;
-                }
-                
-                player = 2;
-            }
-            else
-            {
-                Console.WriteLine("Player 2, please enter the row and column where you want to place your O.");
-                Console.WriteLine("Row: ");
-                row = int.Parse(Console.ReadLine());
-                Console.WriteLine("Column: ");
-                column = int.Parse(Console.ReadLine());
-                
-                board[row, column] = 'O';
-                
-                if (wn.CheckForWinner(board, 'O'))
-                {
-                    Console.WriteLine("Player 2 wins!");
-                    winner = true;
-                }
-                
-                player = 1;
-            }
+            player = PlayerTurn(board, player);
         }
     }    
 }
