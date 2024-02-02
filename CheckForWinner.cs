@@ -28,7 +28,7 @@ namespace Mission4
 
             return false; //No Winner
         }
-        static void PrintBoard(char[,] board)
+        public void PrintBoard(char[,] board)
         {
             for (int i = 0;i < 3;i++)
             {
