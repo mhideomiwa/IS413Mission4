@@ -28,6 +28,16 @@ namespace Mission4
 
             return false; //No Winner
         }
-        testing 
+        static void PrintBoard(char[,] board)
+        {
+            for (int i = 0;i < 3;i++)
+            {
+                for(int j = 0;j < 3;j++)
+                {
+                    Console.WriteLine(board[i,j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
