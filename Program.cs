@@ -114,13 +114,17 @@ internal class Program
         // Ask each player in turn to make a move
         int player = 1;
         
-        while(iCount != 8)
+        while (player != 0)
         {
-            while (player != 0)
+            wn.PrintBoard(board);
+            player = PlayerTurn(board, player);
+            if (iCount == 9)
             {
-                wn.PrintBoard(board);
-                player = PlayerTurn(board, player);
+                Console.WriteLine("It's a draw!");
+                break;
             }
         }
+            
+        
     }    
 }
