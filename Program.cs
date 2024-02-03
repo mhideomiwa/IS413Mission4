@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Mission4;
+using System.Diagnostics.Tracing;
 
 internal class Program
 {
@@ -8,6 +9,7 @@ internal class Program
     {
         Winner wn;
         wn = new Winner();
+        int iCount = 0;
         
         static void InitializeBoard(char[,] board)
         {
@@ -23,7 +25,6 @@ internal class Program
 
         int PlayerTurn(char[,] board, int player)
         {
-
             while (true)
             {
                 // Ask the player to make a move
@@ -61,6 +62,7 @@ internal class Program
                     // If the move is valid, fill the intersection with the player's symbol
                     if (player == 1)
                     {
+                        iCount++; 
                         board[row, column] = 'X';
                         // Check if player 1 has won
                         if (wn.CheckForWinner(board, 'X'))
@@ -76,6 +78,7 @@ internal class Program
                     }
                     else
                     {
+                        iCount++;
                         board[row, column] = 'O';
                         // Check if player 2 has won
                         if (wn.CheckForWinner(board, 'O'))
@@ -94,6 +97,7 @@ internal class Program
                 {
                     // If the move is invalid, inform the player and continue the loop
                     Console.WriteLine("Invalid move. Please try again.");
+                    continue;   
                 }
             }
         }
@@ -110,10 +114,13 @@ internal class Program
         // Ask each player in turn to make a move
         int player = 1;
         
-        while (player != 0)
+        while(iCount != 8)
         {
-            wn.PrintBoard(board);
-            player = PlayerTurn(board, player);
+            while (player != 0)
+            {
+                wn.PrintBoard(board);
+                player = PlayerTurn(board, player);
+            }
         }
     }    
 }
