@@ -30,12 +30,15 @@ namespace Mission4
         }
         public void PrintBoard(char[,] board)
         {
+            //Print Rows
             for (int i = 0;i < 3;i++)
             {
+                //Print Columns
                 for(int j = 0;j < 3;j++)
                 {
                     Console.Write(board[i,j] + " ");
                 }
+                
                 Console.WriteLine();
             }
         }

@@ -34,9 +34,11 @@ internal class Program
                 
                 string columnInput = Console.ReadLine();
 
+                //Declare row and column variables
                 int row;                 
                 int column; 
                 
+                //Check for a valid input
                 if ((rowInput == "0" || rowInput == "1" || rowInput == "2") && (columnInput == "0" || columnInput == "1" || columnInput == "2"))
                 {
                     // Both conversions were successful
@@ -48,7 +50,7 @@ internal class Program
                 }
                 else
                 {
-                    // At least one conversion failed
+                    // If the input isn't valid, prompt them to input a valid integer
                     Console.WriteLine("Invalid input. Please enter valid integer values for row and column.");
                     continue; 
                 }
@@ -60,7 +62,7 @@ internal class Program
                     if (player == 1)
                     {
                         board[row, column] = 'X';
-                        // Check if the player has won
+                        // Check if player 1 has won
                         if (wn.CheckForWinner(board, 'X'))
                         {
                             wn.PrintBoard(board);
@@ -75,7 +77,7 @@ internal class Program
                     else
                     {
                         board[row, column] = 'O';
-                        // Check if the player has won
+                        // Check if player 2 has won
                         if (wn.CheckForWinner(board, 'O'))
                         {
                             wn.PrintBoard(board);
@@ -96,6 +98,7 @@ internal class Program
             }
         }
 
+        //Welcome the player
         Console.WriteLine("Welcome to Tic-Tac-Toe!\n");
 
         // Create a 3x3 game board
