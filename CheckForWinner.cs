@@ -34,7 +34,7 @@ namespace Mission4
             {
                 for(int j = 0;j < 3;j++)
                 {
-                    Console.Write("\n" + board[i,j] + " ");
+                    Console.Write(board[i,j] + " ");
                 }
                 Console.WriteLine();
             }
